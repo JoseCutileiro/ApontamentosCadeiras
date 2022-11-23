@@ -102,9 +102,27 @@ Ordem da mais forte para a mais fraca:
 > Business interface:
 
 ### Elementos de comportamento:
-1. Processo: setinha
+1. Processo: Setinha
 2. Função: Seta boost
 3. Circulo partido: Interação
 4. Evento:
 5. Serviço: 
 
+> Processo vs Função
+
+### Estrutura passica
+> Objeto de negócio \
+> Contrato \
+> Representação \
+> Produto 
+
+### Para o projeto:
+> Diagrama layered viewpoint
+> 1. Papeis e atores externos: \
+> 		ex. Clientes
+> 2. Serviços externos
+> 3. processos, atores e papeis internos
+> [...]
+
+### Exercicio:
+Test-1, 2017
