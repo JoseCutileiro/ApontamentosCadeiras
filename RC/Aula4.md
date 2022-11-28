@@ -54,7 +54,7 @@ Diferntes ligações: Largura de banda diferentes
 	(cabo 1)				______________________
 __________________          |                     |
 |________________| <------> |                     |
-							|_____________________|
+                            |_____________________|
 
 Cabo 1: Bottleneck da ligação (se 1 e 2 são feitos do mesmo material)
 		É o cabo 1 que define o tempo de ligação 
