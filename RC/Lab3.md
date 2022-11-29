@@ -69,3 +69,10 @@ Como distinguir?
 > É fácil fazer uma análise rápida e ter acesso \
 > a informação de terceiros.
 
+### GoBuster: Encontrar páginas escondidas
+
+> gobuster -dir (--url ou [Victim IP]) --wordlist [directory] \
+>[directory]: Path para a wordlist
+
+### John the reaper: Crack passwords
+
