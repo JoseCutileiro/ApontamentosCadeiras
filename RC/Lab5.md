@@ -58,3 +58,10 @@ E se eu agora quiser expor uma das máquinas privadas?
 6. Para um IP especifico (-s)
 
 
+PREROUTING : Preparo antes de criar pacote \
+\
+POSTROUTING : Preparo quando o pacote já existe \
+
+
+
+
