@@ -16,7 +16,7 @@
 5. NACK
 6. Janela e popelining
 
-## TCP:  Transporte fiáve
+## TCP:  Transporte fiável
 
 > Visão geral do serviço oferecido: \
 > \
