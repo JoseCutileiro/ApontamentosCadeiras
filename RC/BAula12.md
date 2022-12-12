@@ -114,6 +114,17 @@ Algoritmos de routing: Preenchem as tabelas
 > Tradicional: Implementados nos routers \
 > SDN: Implementado em servidores remotos
 
+## Controlo Tradicional:
 
+> Vantagem: +resiliente \
+> Problema: Cada router corre uma instancia do algoritmo
 
+## SDN:
+
+> Controlador remoto: Trata da parte dos algoritmos \
+> Tem a visão global da rede (simplifica o problema) \
+> Preenche as tabelas dos routers \
+> (este preenchimento depende de um outro algoritmo) \
+> SDN: Permite uma mudança na rede muito mais facilmente \
+> Basta mudar o algoritmo que corre remotamente
 
