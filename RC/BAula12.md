@@ -69,5 +69,51 @@ Objetivos
 - Transporte de datagramas (entre computadores)
 - Os protocolos desta camada correm em nós terminais **E TAMBÉM nos routers**
 
+### Duas funções chaves:
+
+_NOTA_: A camada de rede acrecenta um cabeçalho ao pacote, esta \
+é a única parte do cabeçalho que vai ser analizada pelos routers
+
+1. Routing:
+```
+Determina o caminho entre a origem e o destino
+Ação global
+Quem materializa? Algoritmos de routing
+```
+2. Forwarding:
+```
+Mover pacotes que chegam ao router para a saída apropriada
+Ação local, (no router mesmo)
+E AINDA: Tem que ser muito rápido
+Requisito do router?
+> A velocidade de cada entrada tem que andar à velocidade do pacote
+(se o servidor  tem uma velociade de 100Gbits/s e o router tem 8 entradas
+seriam precisos 800 Gbits no routers)
+Implementação: Feita em hardware
+```
+
+## Routing vs Forwarding:
+
+Algoritmos de routing: Preenchem as tabelas
+- Como preencher as tabelas
+
+
+## Plano de dados vs plano de controlo:
+
+1. Dados:
+
+> Função local em cada router \
+>
+
+2. Controlo:
+
+> Lógica global \
+> Encaminhamento \
+> Routing é definido aqui (mas não só) \
+> Duas abordagens:
+> Tradicional: Implementados nos routers \
+> SDN: Implementado em servidores remotos
+
+
 
 
