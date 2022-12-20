@@ -91,6 +91,4 @@ Exemplos:
 > Switch programavel -> Com velociades comerciais \
 > (não é turing complte mas permite computacoes básicas)
 
-
-
-
+(como programar um switch -> p4)
