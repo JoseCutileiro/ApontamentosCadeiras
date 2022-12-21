@@ -62,5 +62,22 @@ Proprieades da informação:
 
 >>> Encontrar o nó ao qual eu checo com o **custo minimo**
 
+## Vetor distância: Bellman-Ford
+>> Este algoritmos é destribuido (todos eles fazem partes diferentes do algortimo) para chegar à grande  solução
 
+### Protocolo RIP, IGRP, etc...
 
+## Notas
+```
+dijkstra: Qual é o melhor caminho de R8 a cada nó
+bellman-ford: Qual é o melhor caminho de cada nó ao R8
+```
+## Mudanças no custo da ligação
+
+"As boas noticias propagram rápido" \
+"As más noticias nem por isso" \
+
+> Ciclo \
+> Count-to-infinity > Loop na rede \
+
+## Comparação de algoritmos
