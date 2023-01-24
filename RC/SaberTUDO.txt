@@ -1,0 +1,182 @@
+===============================================================================
+>>>>>>>>>>>>>>>>>>>>  LISTA DE  TODOS OS PROTOCOLOS <<<<<<<<<<<<<<<<<<<<<<<<<<<
+===============================================================================
+# Introducao
+Ligar sistemas terminais:
+	Residenciais: ADSL, cabo, fibra otica 
+	Intitucionais:  Ethernet, Wifi
+	Moveis: 3G, 4G,5G
+===============================================================================
+# Aplicação
+	Web: HTTP (port 80) (stateless)
+		HTTP/1.0: Não persistente
+		HTTP/1.1: Persistente
+	Tranferencia: FTP (port 21) (statefull) (unico out-of-band)
+	Mail: SMTP, POP3, IMAP (port 25) (todos statefull sem ser POP3)
+	Traducao de endereços: DNS (stateless) (nome <-> endereços)
+		Recursivo, iterativo
+
+===============================================================================
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  TEORICAS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+===============================================================================
+# Introducao
+
+O que é um protocolo?
+	> Formato, ordem, objetivos das mensagens, acoes apos cada mensagem
+
+Edge: sistemas terminais 
+Core: Routers interligados
+
+Comutacao de pacotes: Não há reserva de caminhos, 
+		      não há estado (pacote autonomo)
+		      MULTIPLEXAGEM ESTATISTICA
+		      Store&Forward: primeiro guardar, depois forward
+		      Problema: Filas e perdas (caso haja muita gente)
+		      (Best-effort)
+		      Camadas + pacotes = Encapsulamento
+
+Comutacao de circuitos: Recurso reservados (estado),não há partilha
+			DESPERDICIO
+
+Acesso local -> Regional -> ISP -> IXP
+(ligacoes entre ISPs para poupar chamagas ao IXP)
+===============================================================================
+# Aplicação
+
+Arquiteturas: 
+	Cliente servidor - Desempenho depende diretamente do nr de clientes
+	P2P - Desempenho quase nao depende do nr de clientes
+Ligar processos: <IP, port>
+
+Ligações: 
+	Nao persistentes: Uma ligacao para cada objeto
+		t = (2RTT + ttrams) * num_objetos
+	Persistentes: Uma ligacao para todos os objetos
+ 		t = RTT + (RTT + ttrams) * num_objetos
+
+DNS: root -> TLD -> Autoritatios -> Locais (atenção à cache)
+
+exemplo 1: 
+(TO DO)
+
+exemplo 2: 
+(TO DO)
+===============================================================================
+>>>>>>>>>>>>>>>>>>>>>>>>>>>  FORMULAS MAROTAS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+===============================================================================
+
+1) tnó = tproc + tfila + ttrans + tprop
+proc: Decidir interface de saida
+fila: Depende da congestao
+trans: tamnho_pacote/débito_ligacao
+prop: Velocidade fisica
+
+2) Ligações HTTP: 
+	Nao persistentes: Uma ligacao para cada objeto
+		t = (2RTT + ttrams) * num_objetos
+	Persistentes: Uma ligacao para todos os objetos
+ 		t = RTT + (RTT + ttrams) * num_objetos
+
+===============================================================================
+>>>>>>>>>>>>>>>>>>>>>>>>>>>  CONCEITOS MAROTOS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+===============================================================================
+
+1) stateless: Não mantem estado (HTTP) => Escala melhor
+	nota: Queres estado em HTTP: Cookies
+
+2) webCaching: Satisfazer pedidos dos clientes sem envolver o servidor
+	- Reduz quantidade de trafego para o servidor (GET condicional)
+
+3) In-Band: Controlo no mesmo canal dos dados
+   Out-of-Band: Controlo nouutro canal
+
+4) 
+===============================================================================
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  LABS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+===============================================================================
+# Lab 2: ip, traceroute, ping, wireshark, iperf
+
+ping: Sends ICMP packets
+ipferf: Performance tests || "ipferf -c <SERVER_IP> -t 5"
+traceroute: ICMP + TTL
+===============================================================================
+# Lab 3: HTTP
+
+Persistent, Non-Persistent
+Pipelining
+Virtual hosting
+===============================================================================
+# Lab 4: DNS
+
+Queries: Iterativos vs recursivos
+
+DNS records: 
+SOA (start of authority)
+A: IPv4
+AAAA: IPv6
+NS (Name server)
+CNAME (canonical name)
+MX (mail exchange)
+	
+comando: dig -t <DNS_RECORD> <domain>
+===============================================================================
+# Lab 5: Firewall e NATS
+
+iptables (exemplo: iptables -I INPUT -p tcp -j DROP)
+NAT: PRETOUTING and POSTROUTING
+Port forwarding: Forwarding traffic for a specific port on another host
+===============================================================================
+#Lab 6: TCP
+
+Congestao: Muitas fontes mandam muitos dados muito rápido
+(origina perdas de pacotes e atrasos)
+Fases: Slow start - Congestion avoidance - Recovery
+SOCKETS
+	UDP: <port destino, ip destino>
+	TCP: <port origem, ip origem, port destino, ip destino>
+===============================================================================
+# Lab 7: SDN
+
+GERALMENTE: 
+	Plano de dados e plano de controlo estão nos routers
+
+SDN:
+	Separar plano de dados do plano de controlo
+		Plano de dados: Routers
+		Plano de controlo: Controlados centralizado
+
+SDN: Reativo > Manual (configurado por alguem)
+     Proativo > automático (por regras)
+
+Balanceador de carga: Destribuir tráfico entre vários servidores > Round robin
+===============================================================================
+# Lab 8: VPN
+VPN:
+	Encriptadas: OpenVPN
+	Não encriptadas: GRE
+(conceito: Parecer que estamos ligados diretsmente à rede privada
+point2point connection)
+===============================================================================
+# Lab 9: LANs
+ARP,DHCP and VLANs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
