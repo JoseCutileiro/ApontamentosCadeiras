@@ -3,25 +3,25 @@
 
 # Parameters
 
-CLIENT = T01_counter_client
-SERVER = T01_counter_server
+CLIENT = counter_client
+SERVER = counter_server
 
 SOURCES_CLNT.c = 
 SOURCES_CLNT.h = 
 SOURCES_SVC.c = 
 SOURCES_SVC.h = 
-SOURCES.x = T01_counter.x
+SOURCES.x = counter.x
 
-TARGETS_SVC.c = T01_counter_svc.c T01_counter_server.c   
-TARGETS_CLNT.c = T01_counter_clnt.c T01_counter_client.c   
-TARGETS = T01_counter.h   T01_counter_clnt.c T01_counter_svc.c T01_counter_client.c T01_counter_server.c
+TARGETS_SVC.c = counter_svc.c counter_server.c   
+TARGETS_CLNT.c = counter_clnt.c counter_client.c   
+TARGETS = counter.h   counter_clnt.c counter_svc.c counter_client.c counter_server.c
 
 OBJECTS_CLNT = $(SOURCES_CLNT.c:%.c=%.o) $(TARGETS_CLNT.c:%.c=%.o)
 OBJECTS_SVC = $(SOURCES_SVC.c:%.c=%.o) $(TARGETS_SVC.c:%.c=%.o)
 # Compiler flags 
 
-CFLAGS += -g 
-LDLIBS += -lnsl
+CFLAGS += -g -I/usr/include/tirpc
+LDLIBS += -lnsl -ltirpc
 RPCGENFLAGS = 
 
 # Targets 

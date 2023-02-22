@@ -3,8 +3,8 @@
  * It was generated using rpcgen.
  */
 
-#ifndef _T01_COUNTER_H_RPCGEN
-#define _T01_COUNTER_H_RPCGEN
+#ifndef _COUNTER_H_RPCGEN
+#define _COUNTER_H_RPCGEN
 
 #include <rpc/rpc.h>
 
@@ -46,4 +46,4 @@ extern int counter_1_freeresult ();
 }
 #endif
 
-#endif /* !_T01_COUNTER_H_RPCGEN */
+#endif /* !_COUNTER_H_RPCGEN */

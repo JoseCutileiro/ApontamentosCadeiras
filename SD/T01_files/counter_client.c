@@ -4,7 +4,7 @@
  * as a guideline for developing your own functions.
  */
 
-#include "T01_counter.h"
+#include "counter.h"
 
 
 void

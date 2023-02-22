@@ -3,7 +3,7 @@
  * It was generated using rpcgen.
  */
 
-#include "T01_counter.h"
+#include "counter.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <rpc/pmap_clnt.h>
