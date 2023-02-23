@@ -1,0 +1,5 @@
+>> rpcgen -a file.x
+
+editar ficheiros 
+
+>> make -f Makefile.file
