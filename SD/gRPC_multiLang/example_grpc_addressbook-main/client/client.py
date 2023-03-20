@@ -70,9 +70,9 @@ class PythonClient(object):
             print('ERROR: code={}, description={}'.format(rpc_error.code(), rpc_error.details()))
     
     def search_person(self):
-        search_email = input("The email of ther person you want to search: ")
-        request = pb2.searchPerson(search_email)
-        response = self.stub.searchPerson(request)
+        info = pb2.SearchPersonRequest()
+        info.email = input("The email of ther person you want to search: ")
+        response = self.stub.searchPerson(info)
 
         print("Found" + str(response.name))
 
