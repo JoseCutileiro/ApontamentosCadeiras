@@ -49,6 +49,7 @@ class PythonClient(object):
         person = pb2.PersonInfo()
         person.name = input("Enter name: ")
         person.email = input("Enter email: ")
+        person.website = input("Enter website: ")
 
         type = input("Enter phone type: [mobile/home/work] ")
         if type == "mobile":
@@ -75,6 +76,16 @@ class PythonClient(object):
         response = self.stub.searchPerson(info)
 
         print("Found" + str(response.name))
+    
+    def list_webservice(self):
+        req = pb2.ListWebRequest()
+        req.website = input("The website: ")
+
+        response = self.stub.listAll(req)
+
+        for person in response.people:
+            print("::Encontrei:: ")
+            print_person(person)
 
 
 def print_person(person):
@@ -100,6 +111,7 @@ def get_user_choice():
     print("\n[1] See a list of addresses.")
     print("[2] Add person's address.")
     print("[3] Search person's address.")
+    print("[5] List website" )
     print("[q] Quit.")
 
     return input("What would you like to do? ")
@@ -120,6 +132,8 @@ if __name__ == '__main__':
             client.add_person()
         elif choice == '3':
             client.search_person()
+        elif choice == '5':
+            client.list_webservice()
         elif choice == 'q':
             print("\nBye.")
         else:

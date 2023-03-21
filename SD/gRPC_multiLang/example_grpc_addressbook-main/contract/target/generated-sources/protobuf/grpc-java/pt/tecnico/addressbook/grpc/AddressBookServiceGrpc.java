@@ -108,6 +108,37 @@ public final class AddressBookServiceGrpc {
     return getSearchPersonMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<pt.tecnico.addressbook.grpc.ListWebRequest,
+      pt.tecnico.addressbook.grpc.AddressBookList> getListAllMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "listAll",
+      requestType = pt.tecnico.addressbook.grpc.ListWebRequest.class,
+      responseType = pt.tecnico.addressbook.grpc.AddressBookList.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<pt.tecnico.addressbook.grpc.ListWebRequest,
+      pt.tecnico.addressbook.grpc.AddressBookList> getListAllMethod() {
+    io.grpc.MethodDescriptor<pt.tecnico.addressbook.grpc.ListWebRequest, pt.tecnico.addressbook.grpc.AddressBookList> getListAllMethod;
+    if ((getListAllMethod = AddressBookServiceGrpc.getListAllMethod) == null) {
+      synchronized (AddressBookServiceGrpc.class) {
+        if ((getListAllMethod = AddressBookServiceGrpc.getListAllMethod) == null) {
+          AddressBookServiceGrpc.getListAllMethod = getListAllMethod =
+              io.grpc.MethodDescriptor.<pt.tecnico.addressbook.grpc.ListWebRequest, pt.tecnico.addressbook.grpc.AddressBookList>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "listAll"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  pt.tecnico.addressbook.grpc.ListWebRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  pt.tecnico.addressbook.grpc.AddressBookList.getDefaultInstance()))
+              .setSchemaDescriptor(new AddressBookServiceMethodDescriptorSupplier("listAll"))
+              .build();
+        }
+      }
+    }
+    return getListAllMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -177,6 +208,13 @@ public final class AddressBookServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchPersonMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void listAll(pt.tecnico.addressbook.grpc.ListWebRequest request,
+        io.grpc.stub.StreamObserver<pt.tecnico.addressbook.grpc.AddressBookList> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAllMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -200,6 +238,13 @@ public final class AddressBookServiceGrpc {
                 pt.tecnico.addressbook.grpc.SearchPersonRequest,
                 pt.tecnico.addressbook.grpc.PersonInfo>(
                   this, METHODID_SEARCH_PERSON)))
+          .addMethod(
+            getListAllMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                pt.tecnico.addressbook.grpc.ListWebRequest,
+                pt.tecnico.addressbook.grpc.AddressBookList>(
+                  this, METHODID_LIST_ALL)))
           .build();
     }
   }
@@ -241,6 +286,14 @@ public final class AddressBookServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchPersonMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void listAll(pt.tecnico.addressbook.grpc.ListWebRequest request,
+        io.grpc.stub.StreamObserver<pt.tecnico.addressbook.grpc.AddressBookList> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAllMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -276,6 +329,13 @@ public final class AddressBookServiceGrpc {
     public pt.tecnico.addressbook.grpc.PersonInfo searchPerson(pt.tecnico.addressbook.grpc.SearchPersonRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchPersonMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public pt.tecnico.addressbook.grpc.AddressBookList listAll(pt.tecnico.addressbook.grpc.ListWebRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAllMethod(), getCallOptions(), request);
     }
   }
 
@@ -316,11 +376,20 @@ public final class AddressBookServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchPersonMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<pt.tecnico.addressbook.grpc.AddressBookList> listAll(
+        pt.tecnico.addressbook.grpc.ListWebRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAllMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_PEOPLE = 0;
   private static final int METHODID_ADD_PERSON = 1;
   private static final int METHODID_SEARCH_PERSON = 2;
+  private static final int METHODID_LIST_ALL = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -350,6 +419,10 @@ public final class AddressBookServiceGrpc {
         case METHODID_SEARCH_PERSON:
           serviceImpl.searchPerson((pt.tecnico.addressbook.grpc.SearchPersonRequest) request,
               (io.grpc.stub.StreamObserver<pt.tecnico.addressbook.grpc.PersonInfo>) responseObserver);
+          break;
+        case METHODID_LIST_ALL:
+          serviceImpl.listAll((pt.tecnico.addressbook.grpc.ListWebRequest) request,
+              (io.grpc.stub.StreamObserver<pt.tecnico.addressbook.grpc.AddressBookList>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -415,6 +488,7 @@ public final class AddressBookServiceGrpc {
               .addMethod(getListPeopleMethod())
               .addMethod(getAddPersonMethod())
               .addMethod(getSearchPersonMethod())
+              .addMethod(getListAllMethod())
               .build();
         }
       }

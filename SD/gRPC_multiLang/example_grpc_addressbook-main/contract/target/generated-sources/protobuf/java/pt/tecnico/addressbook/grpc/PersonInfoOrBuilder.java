@@ -45,4 +45,16 @@ public interface PersonInfoOrBuilder extends
    * <code>.pt.tecnico.addressbook.grpc.PersonInfo.PhoneNumber phone = 4;</code>
    */
   pt.tecnico.addressbook.grpc.PersonInfo.PhoneNumberOrBuilder getPhoneOrBuilder();
+
+  /**
+   * <code>string website = 5;</code>
+   * @return The website.
+   */
+  java.lang.String getWebsite();
+  /**
+   * <code>string website = 5;</code>
+   * @return The bytes for website.
+   */
+  com.google.protobuf.ByteString
+      getWebsiteBytes();
 }

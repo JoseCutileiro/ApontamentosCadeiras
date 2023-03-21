@@ -23,6 +23,8 @@ message PersonInfo {
   }
 
   PhoneNumber phone = 4;
+
+  string website = 5;
 }
 
 message AddressBookList {
@@ -40,8 +42,13 @@ message SearchPersonRequest {
 message AddPersonResponse {
 }
 
+message ListWebRequest {
+  string website = 1;
+}
+
 service AddressBookService {
   rpc listPeople(ListPeopleRequest) returns (AddressBookList);
   rpc addPerson(PersonInfo) returns (AddPersonResponse);
   rpc searchPerson(SearchPersonRequest) returns (PersonInfo);
+  rpc listAll(ListWebRequest) returns (AddressBookList);
 }

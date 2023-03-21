@@ -9,6 +9,8 @@ import pt.tecnico.addressbook.server.domain.exception.DuplicatePersonInfoExcepti
 
 import static io.grpc.Status.INVALID_ARGUMENT;
 
+import com.google.j2objc.annotations.ObjectiveCName;
+
 public class AddressBookServiceImpl extends AddressBookServiceImplBase {
 
     AddressBook addressBook = new AddressBook();
@@ -23,7 +25,7 @@ public class AddressBookServiceImpl extends AddressBookServiceImplBase {
     @Override
     public void addPerson(PersonInfo request, StreamObserver<AddPersonResponse> responseObserver) {
         try {
-            addressBook.addPerson(request.getName(), request.getEmail(), request.getPhone().getNumber(), request.getPhone().getType());
+            addressBook.addPerson(request.getName(), request.getEmail(), request.getPhone().getNumber(), request.getPhone().getType(),request.getWebsite());
             AddPersonResponse response = AddPersonResponse.getDefaultInstance();
             responseObserver.onNext(response);
             responseObserver.onCompleted();
@@ -44,5 +46,13 @@ public class AddressBookServiceImpl extends AddressBookServiceImplBase {
        PersonInfo response = pInfo.build();
        responseObserver.onNext(response);
        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void listAll(ListWebRequest request, StreamObserver<AddressBookList> responseObserver) {
+        String website = request.getWebsite();
+        AddressBookList response = addressBook.listAll(website);
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
     }
 }

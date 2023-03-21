@@ -8,16 +8,22 @@ public class Person {
     private String email;
     private int phoneNumber;
     private PhoneType type;
+    private String website;
 
-    public Person(String name, String email, int phoneNumber, PhoneType type) {
+    public Person(String name, String email, int phoneNumber, PhoneType type,String website) {
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.type = type;
+        this.website = website;
     }
 
     public String getName() {
         return name;
+    }
+
+    public String getWebsite() {
+        return website;
     }
 
     public void setName(String name) {

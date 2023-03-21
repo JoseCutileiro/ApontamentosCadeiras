@@ -29,6 +29,11 @@ class AddressBookServiceStub(object):
                 request_serializer=AddressBook__pb2.SearchPersonRequest.SerializeToString,
                 response_deserializer=AddressBook__pb2.PersonInfo.FromString,
                 )
+        self.listAll = channel.unary_unary(
+                '/pt.tecnico.addressbook.grpc.AddressBookService/listAll',
+                request_serializer=AddressBook__pb2.ListWebRequest.SerializeToString,
+                response_deserializer=AddressBook__pb2.AddressBookList.FromString,
+                )
 
 
 class AddressBookServiceServicer(object):
@@ -52,6 +57,12 @@ class AddressBookServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def listAll(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AddressBookServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -69,6 +80,11 @@ def add_AddressBookServiceServicer_to_server(servicer, server):
                     servicer.searchPerson,
                     request_deserializer=AddressBook__pb2.SearchPersonRequest.FromString,
                     response_serializer=AddressBook__pb2.PersonInfo.SerializeToString,
+            ),
+            'listAll': grpc.unary_unary_rpc_method_handler(
+                    servicer.listAll,
+                    request_deserializer=AddressBook__pb2.ListWebRequest.FromString,
+                    response_serializer=AddressBook__pb2.AddressBookList.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -128,5 +144,22 @@ class AddressBookService(object):
         return grpc.experimental.unary_unary(request, target, '/pt.tecnico.addressbook.grpc.AddressBookService/searchPerson',
             AddressBook__pb2.SearchPersonRequest.SerializeToString,
             AddressBook__pb2.PersonInfo.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def listAll(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/pt.tecnico.addressbook.grpc.AddressBookService/listAll',
+            AddressBook__pb2.ListWebRequest.SerializeToString,
+            AddressBook__pb2.AddressBookList.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

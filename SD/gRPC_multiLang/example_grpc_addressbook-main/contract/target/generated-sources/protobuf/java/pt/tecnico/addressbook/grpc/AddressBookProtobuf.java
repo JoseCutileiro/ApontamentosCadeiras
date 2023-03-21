@@ -44,6 +44,11 @@ public final class AddressBookProtobuf {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pt_tecnico_addressbook_grpc_AddPersonResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pt_tecnico_addressbook_grpc_ListWebRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pt_tecnico_addressbook_grpc_ListWebRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -54,27 +59,31 @@ public final class AddressBookProtobuf {
   static {
     java.lang.String[] descriptorData = {
       "\n\021AddressBook.proto\022\033pt.tecnico.addressb" +
-      "ook.grpc\"\372\001\n\nPersonInfo\022\014\n\004name\030\001 \001(\t\022\r\n" +
+      "ook.grpc\"\213\002\n\nPersonInfo\022\014\n\004name\030\001 \001(\t\022\r\n" +
       "\005email\030\003 \001(\t\022B\n\005phone\030\004 \001(\01323.pt.tecnico" +
       ".addressbook.grpc.PersonInfo.PhoneNumber" +
-      "\032^\n\013PhoneNumber\022\016\n\006number\030\001 \001(\005\022?\n\004type\030" +
-      "\002 \001(\01621.pt.tecnico.addressbook.grpc.Pers" +
-      "onInfo.PhoneType\"+\n\tPhoneType\022\n\n\006MOBILE\020" +
-      "\000\022\010\n\004HOME\020\001\022\010\n\004WORK\020\002\"J\n\017AddressBookList" +
-      "\0227\n\006people\030\001 \003(\0132\'.pt.tecnico.addressboo" +
-      "k.grpc.PersonInfo\"\023\n\021ListPeopleRequest\"$" +
-      "\n\023SearchPersonRequest\022\r\n\005email\030\001 \001(\t\"\023\n\021" +
-      "AddPersonResponse2\321\002\n\022AddressBookService" +
-      "\022j\n\nlistPeople\022..pt.tecnico.addressbook." +
-      "grpc.ListPeopleRequest\032,.pt.tecnico.addr" +
-      "essbook.grpc.AddressBookList\022d\n\taddPerso" +
-      "n\022\'.pt.tecnico.addressbook.grpc.PersonIn" +
-      "fo\032..pt.tecnico.addressbook.grpc.AddPers" +
-      "onResponse\022i\n\014searchPerson\0220.pt.tecnico." +
-      "addressbook.grpc.SearchPersonRequest\032\'.p" +
-      "t.tecnico.addressbook.grpc.PersonInfoB4\n" +
-      "\033pt.tecnico.addressbook.grpcB\023AddressBoo" +
-      "kProtobufP\001b\006proto3"
+      "\022\017\n\007website\030\005 \001(\t\032^\n\013PhoneNumber\022\016\n\006numb" +
+      "er\030\001 \001(\005\022?\n\004type\030\002 \001(\01621.pt.tecnico.addr" +
+      "essbook.grpc.PersonInfo.PhoneType\"+\n\tPho" +
+      "neType\022\n\n\006MOBILE\020\000\022\010\n\004HOME\020\001\022\010\n\004WORK\020\002\"J" +
+      "\n\017AddressBookList\0227\n\006people\030\001 \003(\0132\'.pt.t" +
+      "ecnico.addressbook.grpc.PersonInfo\"\023\n\021Li" +
+      "stPeopleRequest\"$\n\023SearchPersonRequest\022\r" +
+      "\n\005email\030\001 \001(\t\"\023\n\021AddPersonResponse\"!\n\016Li" +
+      "stWebRequest\022\017\n\007website\030\001 \001(\t2\267\003\n\022Addres" +
+      "sBookService\022j\n\nlistPeople\022..pt.tecnico." +
+      "addressbook.grpc.ListPeopleRequest\032,.pt." +
+      "tecnico.addressbook.grpc.AddressBookList" +
+      "\022d\n\taddPerson\022\'.pt.tecnico.addressbook.g" +
+      "rpc.PersonInfo\032..pt.tecnico.addressbook." +
+      "grpc.AddPersonResponse\022i\n\014searchPerson\0220" +
+      ".pt.tecnico.addressbook.grpc.SearchPerso" +
+      "nRequest\032\'.pt.tecnico.addressbook.grpc.P" +
+      "ersonInfo\022d\n\007listAll\022+.pt.tecnico.addres" +
+      "sbook.grpc.ListWebRequest\032,.pt.tecnico.a" +
+      "ddressbook.grpc.AddressBookListB4\n\033pt.te" +
+      "cnico.addressbook.grpcB\023AddressBookProto" +
+      "bufP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -85,7 +94,7 @@ public final class AddressBookProtobuf {
     internal_static_pt_tecnico_addressbook_grpc_PersonInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pt_tecnico_addressbook_grpc_PersonInfo_descriptor,
-        new java.lang.String[] { "Name", "Email", "Phone", });
+        new java.lang.String[] { "Name", "Email", "Phone", "Website", });
     internal_static_pt_tecnico_addressbook_grpc_PersonInfo_PhoneNumber_descriptor =
       internal_static_pt_tecnico_addressbook_grpc_PersonInfo_descriptor.getNestedTypes().get(0);
     internal_static_pt_tecnico_addressbook_grpc_PersonInfo_PhoneNumber_fieldAccessorTable = new
@@ -116,6 +125,12 @@ public final class AddressBookProtobuf {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pt_tecnico_addressbook_grpc_AddPersonResponse_descriptor,
         new java.lang.String[] { });
+    internal_static_pt_tecnico_addressbook_grpc_ListWebRequest_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_pt_tecnico_addressbook_grpc_ListWebRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pt_tecnico_addressbook_grpc_ListWebRequest_descriptor,
+        new java.lang.String[] { "Website", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
