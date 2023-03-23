@@ -1,5 +1,0 @@
-pt/tecnico/addressbook/server/AddressBookServer.class
-pt/tecnico/addressbook/server/domain/AddressBook.class
-pt/tecnico/addressbook/server/domain/Person.class
-pt/tecnico/addressbook/server/domain/exception/DuplicatePersonInfoException.class
-pt/tecnico/addressbook/server/AddressBookServiceImpl.class
